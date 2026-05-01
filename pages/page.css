@@ -1,0 +1,271 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #f0fdf4;
+  color: #243142;
+  margin: 0;
+}
+
+.page-hero {
+  background: linear-gradient(270deg, #155d86, #2473a6, #1b8a78);
+  color: #fff;
+  padding: 28px 18px 56px;
+}
+
+.page-nav,
+.page-section,
+.page-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.page-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav-link,
+.hero-action,
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.nav-link {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  padding: 10px 16px;
+}
+
+.nav-link:hover,
+.secondary-action:hover {
+  color: #2473a6;
+  background: #fff;
+}
+
+.page-title {
+  text-align: center;
+  padding-top: 52px;
+}
+
+.page-title span {
+  color: rgba(255, 255, 255, 0.72);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.page-title h1 {
+  font-size: clamp(2.3rem, 7vw, 4.6rem);
+  line-height: 1;
+  margin: 12px 0 0;
+}
+
+.page-title p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin: 18px auto 0;
+  max-width: 720px;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.hero-action {
+  color: #155d86;
+  background: #fff;
+  padding: 13px 20px;
+}
+
+.secondary-action {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  padding: 13px 20px;
+}
+
+.page-section {
+  padding: 42px 18px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-card,
+.form-card,
+.wide-card,
+.faq-item {
+  background: #fff;
+  border: 1px solid rgba(36, 115, 166, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(21, 93, 134, 0.08);
+  padding: 24px;
+}
+
+.info-card span {
+  color: #1b8a78;
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.info-card h2,
+.form-card h2,
+.wide-card h2,
+.faq-item h2 {
+  color: #155d86;
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.info-card p,
+.wide-card p,
+.faq-item p {
+  color: #5f6b7a;
+  line-height: 1.85;
+  margin: 12px 0 0;
+}
+
+.wide-card {
+  margin-top: 18px;
+}
+
+.clean-list {
+  color: #5f6b7a;
+  line-height: 1.9;
+  margin: 14px 0 0;
+  padding-right: 20px;
+}
+
+.contact-links {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.contact-links a {
+  color: #2473a6;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-card label {
+  color: #155d86;
+  display: block;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.form-card input,
+.form-card textarea,
+.search-input {
+  border: 1px solid rgba(36, 115, 166, 0.18);
+  border-radius: 8px;
+  font: inherit;
+  padding: 12px 14px;
+  width: 100%;
+}
+
+.form-card textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.form-card button,
+.result-card a {
+  background: #1b8a78;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 900;
+  justify-content: center;
+  padding: 13px 18px;
+  text-decoration: none;
+}
+
+.faq-list,
+.result-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.result-card {
+  background: #fff;
+  border: 1px solid rgba(36, 115, 166, 0.12);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.result-card h2 {
+  color: #155d86;
+  font-size: 1.18rem;
+  margin: 0;
+}
+
+.result-card p {
+  color: #5f6b7a;
+  line-height: 1.7;
+  margin: 8px 0 14px;
+}
+
+.page-footer {
+  background: #2473a6;
+  color: #fff;
+  padding: 24px 18px;
+}
+
+.page-footer-inner {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.page-footer a {
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .content-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-nav,
+  .page-footer-inner {
+    justify-content: center;
+    text-align: center;
+  }
+}

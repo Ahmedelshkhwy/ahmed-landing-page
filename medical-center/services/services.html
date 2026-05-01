@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خدماتنا | المركز الطبي</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="services.css">
+</head>
+<body class="bg-gray-50 font-cairo">
+  <!-- Header -->
+  <header class="bg-gradient-to-l from-[#155d86] via-[#2473a6] to-[#1b8a78] text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm font-medium tracking-[0.3em] text-white/70 mb-2">OUR SERVICES</p>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">خدماتنا الطبية</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        نقدم لكم مجموعة شاملة من الخدمات الطبية المتخصصة باستخدام أحدث التقنيات
+      </p>
+    </div>
+  </header>
+
+  <!-- Services Categories -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <!-- Main Categories -->
+      <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-8">تخصصاتنا الطبية</h2>
+        <div id="categoriesGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <!-- Categories will be inserted here -->
+        </div>
+      </div>
+      
+      <!-- Featured Services -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">الخدمات المميزة</h2>
+        <div id="featuredServices" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Featured services will be inserted here -->
+        </div>
+      </div>
+      
+      <!-- All Services -->
+      <div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">جميع الخدمات</h2>
+        <div id="allServices" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- All services will be inserted here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">لماذا تختارنا؟</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-[#e8f5e9] rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-user-md text-2xl text-[#1b8a78]"></i>
+          </div>
+          <h3 class="font-bold text-gray-800 mb-2">أطباء متخصصون</h3>
+          <p class="text-gray-600 text-sm">نخبة من أفضل الاستشاريين والأخصائيين</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-[#e3f2fd] rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-tools text-2xl text-[#2473a6]"></i>
+          </div>
+          <h3 class="font-bold text-gray-800 mb-2">تقنيات حديثة</h3>
+          <p class="text-gray-600 text-sm">أجهزة ومعدات طبية متطورة</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-[#fff3e0] rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-clock text-2xl text-[#f57c00]"></i>
+          </div>
+          <h3 class="font-bold text-gray-800 mb-2">خدمة سريعة</h3>
+          <p class="text-gray-600 text-sm">وقت انتظار minimal</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-[#fce4ec] rounded-full flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-heart text-2xl text-[#e91e63]"></i>
+          </div>
+          <h3 class="font-bold text-gray-800 mb-2">رعاية متميزة</h3>
+          <p class="text-gray-600 text-sm">اهتمام شخصي بكل مريض</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Details Modal -->
+  <div id="serviceModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div id="modalContent">
+        <!-- Modal content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-l from-[#155d86] via-[#2473a6] to-[#1b8a78] py-12 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-black mb-4">احجز خدمتك الآن</h2>
+      <p class="text-lg text-white/80 mb-8">تواصل معنا لحجز أي خدمة طبية</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/966567796790" target="_blank" 
+          class="inline-flex items-center justify-center gap-2 bg-white text-[#155d86] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition">
+          <i class="fab fa-whatsapp text-2xl"></i>
+          واتساب
+        </a>
+        <a href="../forms/appointment-form.html" 
+          class="inline-flex items-center justify-center gap-2 border-2 border-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">
+          <i class="fas fa-calendar-alt"></i>
+          حجز إلكتروني
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">© 2026 المركز الطبي. جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <script src="services.js"></script>
+</body>
+</html>

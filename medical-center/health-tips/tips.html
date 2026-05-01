@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نصائح صحية | المركز الطبي</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="tips.css">
+</head>
+<body class="bg-gray-50 font-cairo">
+  <!-- Header -->
+  <header class="bg-gradient-to-l from-[#155d86] via-[#2473a6] to-[#1b8a78] text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm font-medium tracking-[0.3em] text-white/70 mb-2">HEALTH TIPS</p>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">نصائح صحية</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        نصائح طبية موثوقة للحفاظ على صحتك وسلامتك
+      </p>
+    </div>
+  </header>
+
+  <!-- Categories Filter -->
+  <section class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex flex-wrap gap-2 justify-center" id="categoryFilters">
+        <!-- Categories will be inserted here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Grid -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div id="tipsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Tips will be inserted here -->
+      </div>
+      
+      <!-- No Results -->
+      <div id="noResults" class="hidden text-center py-12">
+        <i class="fas fa-lightbulb text-6xl text-gray-300 mb-4"></i>
+        <h3 class="text-2xl font-bold text-gray-600 mb-2">لا توجد نصائح</h3>
+        <p class="text-gray-500">جرب اختيار تصنيف آخر</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Tip -->
+  <section class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="bg-gradient-to-l from-[#155d86] to-[#1b8a78] rounded-3xl p-8 md:p-12 text-white">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-lightbulb text-4xl"></i>
+          </div>
+          <div class="text-center md:text-right">
+            <span class="inline-block px-4 py-1 bg-white/20 rounded-full text-sm mb-3">نصيحة اليوم</span>
+            <h2 class="text-2xl md:text-3xl font-black mb-3">اشرب 8 أكواب من الماء يومياً</h2>
+            <p class="text-white/80 text-lg">الماء هو سر الصحة، يساعد على detoxification الجسم ويحافظ على نضارة البشرة</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Modal -->
+  <div id="tipModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div id="modalContent">
+        <!-- Modal content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">احصل على نصائح صحية جديدة</h2>
+      <p class="text-gray-600 mb-6">اشترك في نشرتنا البريدية للحصول على أحدث النصائح</p>
+      <form class="max-w-md mx-auto flex gap-2">
+        <input type="email" placeholder="بريدك الإلكتروني" 
+          class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#2473a6] focus:outline-none">
+        <button type="submit" class="bg-[#155d86] text-white px-6 py-3 rounded-xl font-bold hover:bg-[#2473a6] transition">
+          اشترك
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">© 2026 المركز الطبي. جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <script src="tips.js"></script>
+</body>
+</html>

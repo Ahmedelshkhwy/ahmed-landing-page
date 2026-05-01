@@ -1,0 +1,619 @@
+/* إعدادات عامة */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0fdf4;
+  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* الهيدر */
+header {
+  background-color: #2285a0;
+  color: white;
+  padding: 0.2rem 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* محتوى الهيدر في المنتصف */
+.top-bar,
+nav.main-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+}
+
+/* الشعار */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.brand-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* صندوق البحث */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-box input {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.search-box button {
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #1e6e8c;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-box button:hover {
+  background: #2563eb;
+}
+
+/* أيقونات الهيدر */
+.header-icons button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s;
+}
+
+.header-icons button:hover {
+  color: #fbbf24;
+}
+
+/* القائمة الرئيسية أفقية */
+nav.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav.main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+nav.main-nav ul li a:hover {
+  background: #1e6e8c;
+}
+
+/* الكروت */
+.section-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 16px #0002;
+}
+
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1e40af;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* الهيرو */
+.hero {
+  background: #f0fdf4;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  color: #2285a0;
+  margin-bottom: 1rem;
+}
+
+.hero .cta-btn {
+  background: #2285a0;
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero .cta-btn:hover {
+  background: #1e6e8c;
+}
+
+/* الفوتر */
+.main-footer {
+  background: #2285a0;
+  color: #fff;
+  padding: 2rem 0 0.5rem 0;
+  margin-top: 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 1rem;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-links ul,
+.footer-pages ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-pages li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a,
+.footer-pages a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover,
+.footer-pages a:hover {
+  color: #fbbf24;
+}
+
+.footer-social a img {
+  width: 28px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #e0e7ef;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #e0e7ef;
+}
+
+/* زر تسجيل طبيب في الهيدر */
+.doctor-register-btn {
+  background: #2285a0 !important;
+  color: #fff !important;
+  padding: 7px 18px;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px #0001;
+  display: inline-block;
+}
+
+.doctor-register-btn:hover {
+  background: #17607a !important;
+}
+
+/* pharmacy categories nav */
+.pharmacy-categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.pharmacy-categories-list li a {
+  background: #1e6e8c;
+  color: #fff;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.pharmacy-categories-list li a:hover {
+  background: #2563eb;
+}
+
+@media (max-width: 900px) {
+  .logo img {
+    height: 70px !important;
+  }
+
+  .brand-name {
+    font-size: 1.3rem !important;
+  }
+
+  .pharmacy-categories-list li a {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    height: 48px !important;
+  }
+
+  .brand-name {
+    font-size: 1.1rem !important;
+  }
+
+  .pharmacy-categories-list {
+    gap: 0.2rem;
+  }
+
+  .pharmacy-categories-list li a {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+.main-header .logo img {
+  height: 180px;
+  transition: height 0.3s;
+}
+
+.mini-header .logo img {
+  height: 80px !important;
+}
+
+.mini-header {
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
+}
+
+/* ...existing code... */
+
+/* شريط أقسام الفارماسي sticky */
+.sticky-categories {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: #2285a0;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px #0001;
+  margin-bottom: 0;
+}
+
+.pharmacy-categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.pharmacy-categories-list li a {
+  background: #1e6e8c;
+  color: #fff;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.pharmacy-categories-list li a:hover {
+  background: #2563eb;
+}
+
+/* عند تصغير الهيدر */
+.mini-header #headerContent {
+  display: none !important;
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 900px) {
+  .pharmacy-categories-list li a {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pharmacy-categories-list {
+    gap: 0.2rem;
+  }
+
+  .pharmacy-categories-list li a {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* شريط أقسام الفارماسي sticky */
+.sticky-categories {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: #2285a0;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 8px #0001;
+  margin-bottom: 0;
+}
+
+.pharmacy-categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.pharmacy-categories-list li a {
+  background: #1e6e8c;
+  color: #fff;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.pharmacy-categories-list li a:hover {
+  background: #2563eb;
+}
+
+/* عند تصغير الهيدر */
+.mini-header #headerContent {
+  display: none !important;
+}
+
+.mini-header .pharmacy-categories-nav {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.mini-header~.home-content {
+  margin-top: 60px;
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 900px) {
+  .pharmacy-categories-list li a {
+    font-size: 0.95rem;
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pharmacy-categories-list {
+    gap: 0.2rem;
+  }
+
+  .pharmacy-categories-list li a {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* جعل الكروت في صفوف على الموبايل */
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  width: 220px;
+  max-width: 95vw;
+  margin: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.card-title {
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7rem 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .section-container {
+    gap: 0.5rem;
+  }
+
+  .card {
+    width: 45vw;
+    min-width: 160px;
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card {
+    width: 95vw;
+    min-width: 0;
+    margin: 0.5rem 0;
+  }
+
+  .main-header .logo img {
+    height: 70px !important;
+  }
+
+  .brand-name {
+    font-size: 1.1rem !important;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-pages,
+  .footer-social {
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* تحسين الهيدر والقوائم */
+.top-bar,
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* ضبط مكان أيقونات الهيدر على الموبايل */
+.header-icons {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  z-index: 100;
+  display: flex;
+  gap: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .header-icons {
+    top: 8px;
+    left: 8px;
+    right: auto;
+    gap: 0.1rem;
+    font-size: 1.1rem;
+    /* يمكنك جعلها فوق كل شيء */
+    position: fixed;
+    background: #2285a0e6;
+    padding: 4px 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0002;
+  }
+
+  .header-icons button {
+    font-size: 1.2rem;
+    padding: 0 2px;
+  }
+}
+
+/* إظهار فقط أيقونة السلة وإخفاء باقي الأيقونات */
+.header-icons button:not([title="عربة التسوق"]) {
+  display: none !important;
+}

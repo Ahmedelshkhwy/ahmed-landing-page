@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>نموذج التواصل</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .form-container { max-width: 420px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 12px #0002; padding: 2rem; }
+    .form-container h2 { color: #2285a0; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; margin-bottom: 0.4rem; font-weight: bold; }
+    input, textarea { width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid #ddd; font-size: 1rem; }
+    textarea { min-height: 90px; }
+    .form-actions { text-align: center; }
+    button { background: #2285a0; color: #fff; padding: 0.7rem 2rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; }
+    button:hover { background: #1e6e8c; }
+    .contact-info { margin-top: 2rem; font-size: 0.97rem; color: #444; text-align: center; }
+    .contact-info a { color: #2285a0; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>نموذج التواصل</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">الاسم *</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="email">البريد الإلكتروني *</label>
+        <input type="email" id="email" name="email" required placeholder="example@email.com">
+      </div>
+      <div class="form-group">
+        <label for="message">الرسالة *</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit">إرسال</button>
+      </div>
+    </form>
+    <div class="contact-info">
+      <div>رقم الجوال: <a href="https://wa.me/966567796790" target="_blank">+966567796790</a></div>
+      <div>البريد الإلكتروني: <a href="mailto:elshkhwy@gmail.com">elshkhwy@gmail.com</a></div>
+      <div>حساب GitHub: <a href="https://github.com/Ahmedelshkhwy" target="_blank">Ahmedelshkhwy</a></div>
+    </div>
+  </div>
+</body>
+</html>

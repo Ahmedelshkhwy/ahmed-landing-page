@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>القائمة المنسدلة بزرار الهامبرغر</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+            margin: 40px;
+            direction: rtl;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            width: 36px;
+            height: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-button:focus,
+        .dropdown-button:hover {
+            background-color: rgba(74, 144, 226, 0.2);
+            outline: none;
+        }
+
+        .bar {
+            width: 100%;
+            height: 4px;
+            background-color: #4a90e2;
+            border-radius: 2px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: white;
+            border-radius: 8px;
+            min-width: 220px;
+            margin-top: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            padding: 14px 20px;
+            font-size: 15px;
+            color: #333;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.2s ease;
+            user-select: none;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: #e4f0fb;
+            outline: none;
+            color: #4a90e2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <button class="dropdown-button" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton"
+            aria-label="قائمة الخيارات">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton" tabindex="-1">
+            <div class="dropdown-item" role="menuitem" tabindex="0">تواصل مع الدعم</div>
+            <div class="dropdown-item" role="menuitem" tabindex="0">فلتر الأصناف</div>
+            <div class="dropdown-item" role="menuitem" tabindex="0">api</div>
+            <div class="dropdown-item" role="menuitem" tabindex="0">شركاء النجاح</div>
+            <div class="dropdown-item" role="menuitem" tabindex="0">التسويق بالعمولة</div>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector('.dropdown-button');
+        const menu = document.querySelector('.dropdown-menu');
+
+        // Toggle dropdown menu display
+        function toggleMenu() {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            if (expanded) {
+                menu.classList.remove('show');
+                button.setAttribute('aria-expanded', 'false');
+            } else {
+                menu.classList.add('show');
+                button.setAttribute('aria-expanded', 'true');
+                menu.focus();
+            }
+        }
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close dropdown if clicked outside
+        document.addEventListener('click', () => {
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Keyboard accessibility
+        button.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
+        });
+
+        const items = menu.querySelectorAll('.dropdown-item');
+        items.forEach(item => {
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (item.nextElementSibling) {
+                        item.nextElementSibling.focus();
+                    } else {
+                        items[0].focus();
+                    }
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (item.previousElementSibling) {
+                        item.previousElementSibling.focus();
+                    } else {
+                        items[items.length - 1].focus();
+                    }
+                } else if (e.key === 'Escape') {
+                    menu.classList.remove('show');
+                    button.setAttribute('aria-expanded', 'false');
+                    button.focus();
+                } else if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    alert(`تم اختيار: ${item.textContent}`);
+                    menu.classList.remove('show');
+                    button.setAttribute('aria-expanded', 'false');
+                    button.focus();
+                }
+            });
+
+            item.addEventListener('click', () => {
+                alert(`تم اختيار: ${item.textContent}`);
+                menu.classList.remove('show');
+                button.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>نموذج تسجيل الدخول / إنشاء حساب</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50e3c2;
+            --background-color: #f0f5fa;
+            --input-bg: #fff;
+            --text-color: #333;
+            --border-radius: 8px;
+            --transition-speed: 0.3s;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--background-color);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--text-color);
+        }
+        .container {
+            background: white;
+            padding: 40px 30px 30px 30px;
+            max-width: 400px;
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 12px 20px -10px rgba(74,144,226,0.4);
+            position: relative;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+            font-weight: 700;
+        }
+        form {
+            display: none;
+            flex-direction: column;
+        }
+        form.active {
+            display: flex;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-align: right;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="tel"] {
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1.5px solid #ccc;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: border-color var(--transition-speed);
+            direction: ltr;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="tel"]:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px var(--primary-color);
+        }
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color var(--transition-speed);
+        }
+        button:hover {
+            background: var(--secondary-color);
+        }
+        .toggle-link {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            color: var(--primary-color);
+            user-select: none;
+            text-decoration: underline;
+        }
+        .toggle-link:hover {
+            color: var(--secondary-color);
+        }
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" role="main" aria-label="نموذج تسجيل الدخول وتسجيل المستخدم الجديد">
+        <form id="login-form" class="active" aria-hidden="false" aria-label="نموذج تسجيل الدخول">
+            <h2>تسجيل الدخول</h2>
+            <label for="login-phone">رقم الجوال</label>
+            <input type="tel" id="login-phone" name="login-phone" placeholder="مثلاً 0501234567" required pattern="[0-9]{9,15}" inputmode="tel" />
+            <label for="login-password">كلمة المرور</label>
+            <input type="password" id="login-password" name="login-password" placeholder="أدخل كلمة المرور" required minlength="6" />
+            <button type="submit">دخول</button>
+            <div class="toggle-link" id="show-signup" tabindex="0" role="button" aria-pressed="false">إنشاء حساب جديد</div>
+        </form>
+
+        <form id="signup-form" aria-hidden="true" aria-label="نموذج إنشاء حساب جديد">
+            <h2>إنشاء حساب جديد</h2>
+            <label for="signup-name">الاسم الكامل</label>
+            <input type="text" id="signup-name" name="signup-name" placeholder="أدخل اسمك الكامل" required minlength="3" />
+            <label for="signup-phone">رقم الجوال</label>
+            <input type="tel" id="signup-phone" name="signup-phone" placeholder="مثلاً 0501234567" required pattern="[0-9]{9,15}" inputmode="tel" />
+            <label for="signup-password">كلمة المرور</label>
+            <input type="password" id="signup-password" name="signup-password" placeholder="أدخل كلمة المرور" required minlength="6" />
+            <button type="submit">تسجيل</button>
+            <div class="toggle-link" id="show-login" tabindex="0" role="button" aria-pressed="false">تسجيل الدخول</div>
+        </form>
+    </div>
+
+    <script>
+        // Toggle between login and signup forms
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const showSignup = document.getElementById('show-signup');
+        const showLogin = document.getElementById('show-login');
+
+        function toggleForms(showLoginForm) {
+            if (showLoginForm) {
+                loginForm.classList.add('active');
+                loginForm.setAttribute('aria-hidden', 'false');
+                signupForm.classList.remove('active');
+                signupForm.setAttribute('aria-hidden', 'true');
+                showSignup.setAttribute('aria-pressed', 'false');
+                showLogin.setAttribute('aria-pressed', 'true');
+            } else {
+                loginForm.classList.remove('active');
+                loginForm.setAttribute('aria-hidden', 'true');
+                signupForm.classList.add('active');
+                signupForm.setAttribute('aria-hidden', 'false');
+                showSignup.setAttribute('aria-pressed', 'true');
+                showLogin.setAttribute('aria-pressed', 'false');
+            }
+        }
+
+        showSignup.addEventListener('click', () => toggleForms(false));
+        showLogin.addEventListener('click', () => toggleForms(true));
+        // Also accessible by keyboard
+        showSignup.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleForms(false);
+            }
+        });
+        showLogin.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleForms(true);
+            }
+        });
+
+        // Optional: prevent form submission for demonstration
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('تم تسجيل الدخول (توضيحي)');
+        });
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('تم إنشاء الحساب (توضيحي)');
+        });
+    </script>
+</body>
+</html>
+

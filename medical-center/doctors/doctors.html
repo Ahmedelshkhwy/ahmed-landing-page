@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أطباؤنا | المركز الطبي</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="doctors.css">
+</head>
+<body class="bg-gray-50 font-cairo">
+  <!-- Header -->
+  <header class="bg-gradient-to-l from-[#155d86] via-[#2473a6] to-[#1b8a78] text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm font-medium tracking-[0.3em] text-white/70 mb-2">OUR MEDICAL TEAM</p>
+      <h1 class="text-4xl md:text-5xl font-black mb-4">أطباؤنا</h1>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto">
+        نخبة من أفضل الاستشاريين والأخصائيين في مختلف التخصصات الطبية
+      </p>
+    </div>
+  </header>
+
+  <!-- Search & Filter Section -->
+  <section class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <!-- Search -->
+        <div class="relative w-full md:w-1/3">
+          <input type="text" id="searchInput" placeholder="ابحث عن طبيب..." 
+            class="w-full px-4 py-3 pr-12 border-2 border-gray-200 rounded-xl focus:border-[#2473a6] focus:outline-none transition">
+          <i class="fas fa-search absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </div>
+        
+        <!-- Specialty Filter -->
+        <div class="w-full md:w-1/3">
+          <select id="specialtyFilter" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#2473a6] focus:outline-none transition bg-white">
+            <option value="">كل التخصصات</option>
+            <option value="باطنة">الباطنة</option>
+            <option value="جراحة">الجراحة العامة</option>
+            <option value="أطفال">طب الأطفال</option>
+            <option value="نساء">نساء وتوليد</option>
+            <option value="عظام">العظام</option>
+            <option value="جلدية">الجلدية</option>
+            <option value="قلب">أمراض القلب</option>
+            <option value="عيون">العيون</option>
+            <option value="أنف">الأنف والأذن والحنجرة</option>
+            <option value="أعصاب">الأعصاب</option>
+            <option value="أسنان">طب الأسنان</option>
+          </select>
+        </div>
+        
+        <!-- Results Count -->
+        <div class="w-full md:w-1/3 text-center">
+          <span id="resultsCount" class="text-lg font-bold text-[#155d86]">0</span>
+          <span class="text-gray-600"> طبيب متاح</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors Grid -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <div id="doctorsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Doctors will be inserted here by JavaScript -->
+      </div>
+      
+      <!-- No Results Message -->
+      <div id="noResults" class="hidden text-center py-12">
+        <i class="fas fa-user-md text-6xl text-gray-300 mb-4"></i>
+        <h3 class="text-2xl font-bold text-gray-600 mb-2">لا توجد نتائج</h3>
+        <p class="text-gray-500">جرب البحث بتخصص آخر</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctor Details Modal -->
+  <div id="doctorModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div id="modalContent">
+        <!-- Modal content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Section -->
+  <section class="bg-gradient-to-l from-[#155d86] via-[#2473a6] to-[#1b8a78] py-12 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-black mb-4">احجز موعدك الآن</h2>
+      <p class="text-lg text-white/80 mb-8">تواصل معنا لحجز موعد مع أي طبيب</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+       <a href="https://wa.me/966567796790" target="_blank" 
+          class="inline-flex items-center justify-center gap-2 bg-white text-[#155d86] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition">
+          <i class="fab fa-whatsapp text-2xl"></i>
+          واتساب
+        </a>
+        <a href="../forms/appointment-form.html" 
+          class="inline-flex items-center justify-center gap-2 border-2 border-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">
+          <i class="fas fa-calendar-alt"></i>
+          حجز إلكتروني
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-400">© 2026 المركز الطبي. جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <script src="doctors.js"></script>
+</body>
+</html>

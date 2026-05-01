@@ -1,0 +1,170 @@
+/* Services Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #155d86;
+  --secondary: #2473a6;
+  --accent: #1b8a78;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f9fafb;
+}
+
+/* Header */
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></svg>');
+  background-size: 30px 30px;
+}
+
+/* Category Buttons */
+#categoriesGrid button {
+  transition: all 0.3s ease;
+}
+
+#categoriesGrid button:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Cards */
+#featuredServices > div,
+#allServices > div {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#featuredServices > div:hover,
+#allServices > div:hover {
+  transform: translateY(-5px);
+}
+
+/* Line Clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Modal */
+#serviceModal {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#serviceModal > div {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icons */
+.w-14.h-14 {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  #categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #featuredServices,
+  #allServices {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Button Transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  transform: scale(1.02);
+}
+
+/* Feature List */
+#serviceModal .fa-check-circle {
+  font-size: 0.9rem;
+}
+
+/* Category Colors */
+.bg-blue-100 { background-color: #dbeafe; }
+.text-blue-600 { color: #2563eb; }
+.bg-red-100 { background-color: #fee2e2; }
+.text-red-600 { color: #dc2626; }
+.bg-green-100 { background-color: #dcfce7; }
+.text-green-600 { color: #16a34a; }
+.bg-pink-100 { background-color: #fce7f3; }
+.text-pink-600 { color: #db2777; }
+.bg-yellow-100 { background-color: #fef9c3; }
+.text-yellow-600 { color: #ca8a04; }
+.bg-purple-100 { background-color: #f3e8ff; }
+.text-purple-600 { color: #9333ea; }
+.bg-teal-100 { background-color: #ccfbf1; }
+.text-teal-600 { color: #0d9488; }
